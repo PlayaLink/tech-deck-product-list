@@ -9,8 +9,8 @@ app.set("view engine", "ejs");
 app.get('/', function(req, res){
   request("http://feed.spinmasterstudios.com/rest/service/sm/us/catalog/ProductList?root=cat_tech_deck&categories=true",
     function(error, response, body){
-      var productsArray = JSON.parse(body).products
-      res.render('../views/home', {products: productsArray});
+      var productsArray = JSON.parse(body).products;
+      res.render('/views/home', {products: productsArray});
       console.log();
   });
 });
@@ -19,13 +19,6 @@ app.get('/', function(req, res){
 app.use(express.static(__dirname + '/public'));
 
 
-
-// app.get('/data', function(req, res){
-//   $.get("http://feed.spinmasterstudios.com/rest/service/sm/us/catalog/ProductList?root=cat_tech_deck&categories=true", function(data, status){
-//     console.log(data);
-//     res.render(data);
-//   });
-// });
 
 
 
