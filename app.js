@@ -10,7 +10,7 @@ app.get('/', function(req, res){
   request("http://feed.spinmasterstudios.com/rest/service/sm/us/catalog/ProductList?root=cat_tech_deck&categories=true",
     function(error, response, body){
       var productsArray = JSON.parse(body).products;
-      res.render('/views/home', {products: productsArray});
+      res.render('../views/home', {products: productsArray});
       console.log();
   });
 });
