@@ -6,7 +6,7 @@ var request = require('request');
 
 app.set("view engine", "ejs");
 
-app.get('/data', function(req, res){
+app.get('/', function(req, res){
   request("http://feed.spinmasterstudios.com/rest/service/sm/us/catalog/ProductList?root=cat_tech_deck&categories=true",
     function(error, response, body){
       var productsArray = JSON.parse(body).products
